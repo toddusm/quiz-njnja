@@ -16,29 +16,56 @@ var score = 0;
 //call function 
 play(quiz);
 
-//Quiz function
+//functions 
 function play(quiz){
-    for(var i = 0; question, answer, i < quiz.length; i++){
-        question = quiz[i][0];
-        answer = ask(question);
-        check(answer);
+    for(var i = 0; i < quiz.length; i++){
+    question = quiz[i][0];
+    answer = ask(question);
+    check(answer);
     }
-    gameover();
     function ask(question){
-        return prompt(question);
+        return prompt(question).toUpperCase;
     }
     function check(answer){
-        if(answer === [i][1]){
+        if(answer === quiz[i][1].toUpperCase){
             alert("Correct");
             score++;
         } else {
-            alert("Wrong NO SOUP FOR YOU!!!!!!");
+            alert("Wrong!!!! Your Nerd Card is revoked!");
         }
     }
-    function gameover(){
+    function gameOver(){
         alert("Game Over, you scored " + score + " points!");
     }
+    gameOver();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // for (var i=0; i < quiz.length; i++){
 //     //get answer
 //     var answer = prompt(quiz[i][0]).toLowerCase();
