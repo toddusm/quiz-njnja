@@ -13,17 +13,28 @@ var quiz = [
 //score
 var score = 0;
 
-//Quiz Loop
-for (var i=0; i < quiz.length; i++){
-    //get answer
-    var answer = prompt(quiz[i][0]).toLowerCase();
-    //check answer
-    if(answer === quiz[i][1].toLowerCase()){
-        alert("Correct")
-        console.log(quiz[i][1]);
-        score++;
-    } else {
-        alert("Wrong!!!! Your Nerd Card is revoked!");
+//call function 
+play(quiz);
+
+//Quiz function
+function play(quiz){
+    for(var i = 0; question, answer, i < quiz.length; i++){
+        question = quiz[i][0];
+        answer = ask(question);
+        check(answer);
     }
+    gameover();
 }
-alert("Game Over, you scored " + score + " points!");
+// for (var i=0; i < quiz.length; i++){
+//     //get answer
+//     var answer = prompt(quiz[i][0]).toLowerCase();
+//     //check answer
+//     if(answer === quiz[i][1].toLowerCase()){
+//         alert("Correct")
+//         console.log(quiz[i][1]);
+//         score++;
+//     } else {
+//         alert("Wrong!!!! Your Nerd Card is revoked!");
+//     }
+// }
+// alert("Game Over, you scored " + score + " points!");
