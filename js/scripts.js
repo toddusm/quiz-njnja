@@ -24,6 +24,20 @@ function play(quiz){
         check(answer);
     }
     gameover();
+    function ask(question){
+        return prompt(question);
+    }
+    function check(answer){
+        if(answer === [i][1]){
+            alert("Correct");
+            score++;
+        } else {
+            alert("Wrong NO SOUP FOR YOU!!!!!!");
+        }
+    }
+    function gameover(){
+        alert("Game Over, you scored " + score + " points!");
+    }
 }
 // for (var i=0; i < quiz.length; i++){
 //     //get answer
