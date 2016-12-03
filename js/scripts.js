@@ -1,14 +1,19 @@
 // Welcome User
 alert("Welcome to Quiz Ninja");
 
-//question array
-var quiz = [
-    ["What is Superman's real name?", "Clark Kent"],
-    ["What is Wonderwoman's real name?", "Dianna Prince"],
-    ["What is Batman's real name?", "Bruce Wayne"],
-    ["What is Iron Man's real name?", "Tony Stark"],
-    ["What is Wolverine's real name?", "Logan"]
-];
+//question object
+var quiz = {
+    name: "Super Hero Name Quiz",
+    description: "How many super heros can you name?",
+    question: "What is the real name of ",
+    questions: [
+        {codeName: "Cyclops", realName: "Scott Summers"},
+        {codeName: "Marvel Girl", realName: "Jean Grey"},
+        {codeName: "Beast", realName: "Hank McCoy"},
+        {codeName: "Iceman", realName: "Bobby Drake"},
+        {codeName: "Angel", realName: "Warren Worthington III"}
+    ]
+}
 
 //score
 var score = 0;
@@ -18,16 +23,19 @@ play(quiz);
 
 //functions 
 function play(quiz){
-    for(var i = 0; i < quiz.length; i++){
-    question = quiz[i][0];
+    for(var i = 0; i < quiz.questions.length; i++){
+    question = quiz.questions[i].codeName;
+    console.log(question);
     answer = ask(question);
+    console.log(answer)
     check(answer);
     }
     function ask(question){
-        return prompt(question).toUpperCase;
+        return prompt(quiz.question + question).toUpperCase();
     }
     function check(answer){
-        if(answer === quiz[i][1].toUpperCase){
+        if(answer === quiz.questions[i].realName.toUpperCase()){
+            console.log(ask);
             alert("Correct");
             score++;
         } else {
